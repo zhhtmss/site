@@ -21,7 +21,7 @@ export default function Header() {
       <div className="container">
         <nav className="navbar navbar-expand-lg px-0">
           <Link to="/" className="navbar-brand brand" onClick={() => setOpen(false)}>
-            <Logo size={22} />
+            <Logo size={28} />
             <span>SanGlow</span>
           </Link>
 

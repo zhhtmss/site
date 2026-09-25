@@ -12,7 +12,7 @@ export default function Hero() {
           <div className="col-lg-6">
             <div className="hero-copy">
               <div className="d-inline-flex align-items-center gap-3 mb-2 brand-chip">
-                <Logo size={58} />
+                <Logo size={86} />
               </div>
               <h1>SanGlow</h1>
               <p className="lead">{t("tag")}</p>

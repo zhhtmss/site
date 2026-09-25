@@ -1,27 +1,36 @@
-export default function Logo({ size = 64 }: { size?: number }) {
-  const h = [12, 28, 44, 24, 10];
+export default function Logo({ size = 72 }: { size?: number }) {
+  const radius = size >= 48 ? 18 : 12;
+
   return (
-    <svg width={size} height={size} viewBox="0 0 64 64" aria-hidden="true">
-      <rect
-        x="1"
-        y="1"
-        width="62"
-        height="62"
-        fill="var(--bg2)"
-        stroke="var(--line)"
-        strokeWidth="2"
+    <span
+      style={{
+        display: "inline-flex",
+        width: size,
+        height: size,
+        borderRadius: radius,
+        overflow: "hidden",
+        background: "transparent",
+        boxShadow: "none",
+        flexShrink: 0,
+      }}
+    >
+      <img
+        src="/assets/icon.png"
+        alt="SanGlow logo"
+        width={size}
+        height={size}
+        style={{
+          display: "block",
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+          objectPosition: "center",
+          border: 0,
+          padding: 0,
+          margin: 0,
+          background: "transparent",
+        }}
       />
-      {h.map((v, i) => (
-        <rect
-          key={i}
-          x={12 + i * 8}
-          y={32 - v / 2}
-          width="5"
-          height={v}
-          fill="var(--acc)"
-          opacity={i === 2 ? 1 : 0.55}
-        />
-      ))}
-    </svg>
+    </span>
   );
 }

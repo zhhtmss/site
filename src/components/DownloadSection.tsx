@@ -26,11 +26,11 @@ export default function DownloadSection() {
     <section id="download" className="section-shell">
       <div className="container">
         <h2 className="section-title">{t("dH")}</h2>
-        <div className="row g-3 mb-4">
+        <div className="download-grid mb-4">
           {DOWNLOADS.map(({ name, file }, index) => {
             const Icon = icons[index];
             return (
-              <div key={name} className="col-lg-4 col-md-6">
+              <div key={name} className="download-item">
                 <div className="download-card h-100">
                   <div className="d-flex align-items-center gap-3 mb-3">
                     <div className="download-icon">
