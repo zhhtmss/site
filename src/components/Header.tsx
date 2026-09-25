@@ -20,7 +20,11 @@ export default function Header() {
     <header className="hdr">
       <div className="container">
         <nav className="navbar navbar-expand-lg px-0">
-          <Link to="/" className="navbar-brand brand" onClick={() => setOpen(false)}>
+          <Link
+            to="/"
+            className="navbar-brand brand"
+            onClick={() => setOpen(false)}
+          >
             <Logo size={28} />
             <span>SanGlow</span>
           </Link>
@@ -38,7 +42,10 @@ export default function Header() {
             {open ? <X size={18} /> : <Menu size={18} />}
           </button>
 
-          <div className={"collapse navbar-collapse" + (open ? " show" : "")} id="mainNav">
+          <div
+            className={"collapse navbar-collapse" + (open ? " show" : "")}
+            id="mainNav"
+          >
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               {links.map(([k, to]) => (
                 <li key={k} className="nav-item">

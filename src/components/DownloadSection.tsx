@@ -67,7 +67,12 @@ export default function DownloadSection() {
         <p className="muted text-center mb-3">{t("install")}</p>
         <div className="command-box">
           <code>{cmd}</code>
-          <button type="button" className="icon" onClick={copy} aria-label={t("copy")}>
+          <button
+            type="button"
+            className="icon"
+            onClick={copy}
+            aria-label={t("copy")}
+          >
             <Copy size={15} />
           </button>
         </div>

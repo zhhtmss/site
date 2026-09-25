@@ -46,7 +46,8 @@ body {
   line-height: 1.55;
   overflow-x: clip;
   overflow-y: auto;
-  background-image: linear-gradient(rgba(255, 255, 255, 0.018) 1px, transparent 1px),
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.018) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 0.018) 1px, transparent 1px);
   background-size: 42px 42px;
 }
@@ -228,12 +229,19 @@ section {
 .hero:before {
   content: "";
   position: absolute;
-  width: 440px;
-  height: 240px;
-  top: 48px;
+  width: 520px;
+  height: 260px;
+  top: 42px;
   left: 50%;
   transform: translateX(-50%);
-  background: radial-gradient(ellipse, rgba(255, 121, 91, 0.18), transparent 68%);
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 121, 91, 0.12),
+    rgba(255, 121, 91, 0.04) 32%,
+    transparent 72%
+  );
+  filter: blur(18px);
+  opacity: 0.9;
   pointer-events: none;
 }
 .hero > * {
@@ -277,7 +285,11 @@ section {
   height: 44%;
   left: 10%;
   bottom: 0;
-  background: radial-gradient(ellipse, rgba(142, 215, 202, 0.28), transparent 68%);
+  background: radial-gradient(
+    ellipse,
+    rgba(142, 215, 202, 0.28),
+    transparent 68%
+  );
   filter: blur(16px);
 }
 .screen {
@@ -287,7 +299,11 @@ section {
   gap: 12px;
   padding: 18px;
   border: 1px solid rgba(255, 255, 255, 0.16);
-  background: linear-gradient(145deg, rgba(36, 43, 56, 0.94), rgba(15, 19, 27, 0.96));
+  background: linear-gradient(
+    145deg,
+    rgba(36, 43, 56, 0.94),
+    rgba(15, 19, 27, 0.96)
+  );
   border-radius: 12px;
   box-shadow: 0 26px 50px rgba(0, 0, 0, 0.38);
   text-align: left;
@@ -296,7 +312,9 @@ section {
 .screen-muted,
 .screen-controls {
   color: var(--mu);
-  font: 10px "IBM Plex Mono", monospace;
+  font:
+    10px "IBM Plex Mono",
+    monospace;
   letter-spacing: 0.08em;
 }
 .screen-back {
@@ -420,13 +438,19 @@ section {
 }
 .phone-glow {
   position: absolute;
-  width: 78%;
-  height: 48%;
-  left: 12%;
-  bottom: 9%;
-  background: radial-gradient(ellipse, rgba(255, 121, 91, 0.3), rgba(142, 215, 202, 0.12) 40%, transparent 70%);
-  filter: blur(22px);
-  transform: rotate(-12deg);
+  width: 72%;
+  height: 42%;
+  left: 14%;
+  bottom: 10%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 121, 91, 0.24),
+    rgba(142, 215, 202, 0.08) 35%,
+    transparent 72%
+  );
+  filter: blur(26px);
+  opacity: 0.8;
+  transform: rotate(-8deg);
 }
 .phone {
   position: absolute;
@@ -436,7 +460,9 @@ section {
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 30px;
   background: linear-gradient(145deg, #394352, #10141c 36%, #202735);
-  box-shadow: 28px 38px 44px rgba(0, 0, 0, 0.4), inset 0 0 0 2px rgba(0, 0, 0, 0.3);
+  box-shadow:
+    28px 38px 44px rgba(0, 0, 0, 0.4),
+    inset 0 0 0 2px rgba(0, 0, 0, 0.3);
   transform-style: preserve-3d;
 }
 .phone:after {
@@ -473,7 +499,9 @@ section {
 }
 .phone-screen > span {
   color: var(--cool);
-  font: 9px "IBM Plex Mono", monospace;
+  font:
+    9px "IBM Plex Mono",
+    monospace;
   letter-spacing: 0.12em;
 }
 .phone-screen strong {
@@ -533,7 +561,9 @@ section {
   justify-content: space-between;
   align-items: center;
   color: var(--mu);
-  font: 10px "IBM Plex Mono", monospace;
+  font:
+    10px "IBM Plex Mono",
+    monospace;
 }
 .phone-controls b {
   display: grid;
@@ -571,16 +601,31 @@ section {
   font-weight: 500;
 }
 @keyframes phoneFloat {
-  0%, 100% { transform: rotateY(-12deg) rotateZ(-2deg) translateY(0); }
-  50% { transform: rotateY(-8deg) rotateZ(0deg) translateY(-14px); }
+  0%,
+  100% {
+    transform: rotateY(-12deg) rotateZ(-2deg) translateY(0);
+  }
+  50% {
+    transform: rotateY(-8deg) rotateZ(0deg) translateY(-14px);
+  }
 }
 @keyframes phoneFloatBack {
-  0%, 100% { transform: rotateY(-28deg) rotateZ(9deg) scale(0.8) translateY(0); }
-  50% { transform: rotateY(-23deg) rotateZ(6deg) scale(0.8) translateY(-12px); }
+  0%,
+  100% {
+    transform: rotateY(-28deg) rotateZ(9deg) scale(0.8) translateY(0);
+  }
+  50% {
+    transform: rotateY(-23deg) rotateZ(6deg) scale(0.8) translateY(-12px);
+  }
 }
 @keyframes phoneFloatFront {
-  0%, 100% { transform: rotateY(28deg) rotateZ(-10deg) scale(0.78) translateY(0); }
-  50% { transform: rotateY(23deg) rotateZ(-7deg) scale(0.78) translateY(-10px); }
+  0%,
+  100% {
+    transform: rotateY(28deg) rotateZ(-10deg) scale(0.78) translateY(0);
+  }
+  50% {
+    transform: rotateY(23deg) rotateZ(-7deg) scale(0.78) translateY(-10px);
+  }
 }
 @keyframes in {
   from {
@@ -845,7 +890,9 @@ tbody tr:hover {
 }
 .dl-copy small {
   color: var(--mu);
-  font: 11px "IBM Plex Mono", monospace;
+  font:
+    11px "IBM Plex Mono",
+    monospace;
   margin-top: 4px;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -1073,7 +1120,9 @@ body {
   color: var(--mu);
   padding: 0.7rem 0.9rem !important;
   border-bottom: 2px solid transparent;
-  transition: color 0.2s ease, border-color 0.2s ease;
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease;
 }
 
 .nav-link:hover,
@@ -1170,7 +1219,11 @@ body {
   padding: 1.25rem;
   border: 1px solid var(--line);
   border-radius: 1rem;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.015));
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.02),
+    rgba(255, 255, 255, 0.015)
+  );
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.08);
 }
 
@@ -1206,7 +1259,9 @@ body {
   border: 1px solid var(--line);
   background: rgba(255, 255, 255, 0.02);
   color: var(--mu);
-  font: 12px "IBM Plex Mono", monospace;
+  font:
+    12px "IBM Plex Mono",
+    monospace;
 }
 
 .command-box {
@@ -1223,7 +1278,9 @@ body {
 
 .command-box code {
   flex: 1;
-  font: 13px "IBM Plex Mono", monospace;
+  font:
+    13px "IBM Plex Mono",
+    monospace;
   color: var(--tx);
   white-space: pre;
 }

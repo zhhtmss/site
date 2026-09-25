@@ -21,7 +21,12 @@ export default function Hero() {
                   <Download size={16} />
                   {t("dl")}
                 </Link>
-                <a className="btn btn-outline-light btn-lg" href={GH} target="_blank" rel="noreferrer">
+                <a
+                  className="btn btn-outline-light btn-lg"
+                  href={GH}
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <Github size={16} />
                   GitHub
                 </a>
@@ -47,11 +52,17 @@ export default function Hero() {
                 <div className="phone-camera" />
                 <div className="phone-screen phone-player">
                   <span className="phone-label">SANGLOW PLAYER</span>
-                  <div className="phone-cover"><Logo size={58} /></div>
+                  <div className="phone-cover">
+                    <Logo size={58} />
+                  </div>
                   <strong>Neon memories</strong>
                   <small>SanGlow collection</small>
                   <i className="phone-progress" />
-                  <div className="phone-controls"><span>1:42</span><b>II</b><span>3:28</span></div>
+                  <div className="phone-controls">
+                    <span>1:42</span>
+                    <b>II</b>
+                    <span>3:28</span>
+                  </div>
                 </div>
               </div>
               <div className="phone phone-front">

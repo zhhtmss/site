@@ -12,7 +12,12 @@ export default function Footer() {
             <p className="muted mb-0">{t("fTag")}</p>
           </div>
           <nav className="col-md-auto d-flex flex-wrap gap-3 align-items-center justify-content-md-end">
-            <a href={GH} target="_blank" rel="noreferrer" className="text-decoration-none">
+            <a
+              href={GH}
+              target="_blank"
+              rel="noreferrer"
+              className="text-decoration-none"
+            >
               GitHub
             </a>
             <Link to="/download" className="text-decoration-none">
