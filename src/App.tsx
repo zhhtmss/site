@@ -21,9 +21,9 @@ export default function App() {
     }
   }, [pathname, hash]);
   return (
-    <div className="frame">
+    <div className="frame app-shell">
       <Header />
-      <main>
+      <main className="page-main">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/download" element={<Download />} />

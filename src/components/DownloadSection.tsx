@@ -23,46 +23,54 @@ export default function DownloadSection() {
     toast(t("copied"));
   };
   return (
-    <section id="download">
-      <h2>{t("dH")}</h2>
-      <div className="dls">
-        {DOWNLOADS.map(({ name, file }, index) => {
-          const Icon = icons[index];
-          return (
-          <div key={name} className="dl">
-            <div className="dl-copy">
-              <Icon size={20} className="acc" />
-              <div>
-                <b>{name}</b>
-                <small>{file}</small>
+    <section id="download" className="section-shell">
+      <div className="container">
+        <h2 className="section-title">{t("dH")}</h2>
+        <div className="row g-3 mb-4">
+          {DOWNLOADS.map(({ name, file }, index) => {
+            const Icon = icons[index];
+            return (
+              <div key={name} className="col-lg-4 col-md-6">
+                <div className="download-card h-100">
+                  <div className="d-flex align-items-center gap-3 mb-3">
+                    <div className="download-icon">
+                      <Icon size={18} />
+                    </div>
+                    <div>
+                      <div className="fw-semibold">{name}</div>
+                      <small className="text-body-secondary">{file}</small>
+                    </div>
+                  </div>
+                  <a
+                    className="btn btn-primary w-100"
+                    href={`/downloads/${file}`}
+                    download
+                    onClick={(event) => {
+                      event.preventDefault();
+                      downloadFile(file);
+                    }}
+                  >
+                    <Download size={14} />
+                    {t("dBtn")}
+                  </a>
+                </div>
               </div>
-            </div>
-            <a
-              className="btn sm"
-              href={`/downloads/${file}`}
-              download
-              onClick={(event) => {
-                event.preventDefault();
-                downloadFile(file);
-              }}
-            >
-              <Download size={14} />
-              {t("dBtn")}
-            </a>
-          </div>
-          );
-        })}
-      </div>
-      <div className="badges">
-        <span>{t("oss")}</span>
-        <span>MIT License</span>
-      </div>
-      <p className="muted">{t("install")}</p>
-      <div className="code">
-        <code>{cmd}</code>
-        <button className="icon" onClick={copy} aria-label={t("copy")}>
-          <Copy size={15} />
-        </button>
+            );
+          })}
+        </div>
+
+        <div className="d-flex flex-wrap gap-2 justify-content-center mb-3">
+          <span className="badge-soft">{t("oss")}</span>
+          <span className="badge-soft">MIT License</span>
+        </div>
+
+        <p className="muted text-center mb-3">{t("install")}</p>
+        <div className="command-box">
+          <code>{cmd}</code>
+          <button type="button" className="icon" onClick={copy} aria-label={t("copy")}>
+            <Copy size={15} />
+          </button>
+        </div>
       </div>
     </section>
   );
