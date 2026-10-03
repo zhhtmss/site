@@ -75,8 +75,9 @@ a:hover {
   outline-offset: 2px;
 }
 .frame {
-  max-width: 1240px;
-  margin: 20px auto;
+  width: 100%;
+  max-width: none;
+  margin: 76px auto 0;
   border: 1px solid rgba(255, 255, 255, 0.08);
   background: color-mix(in srgb, var(--bg) 94%, transparent);
   box-shadow: 0 28px 80px rgba(0, 0, 0, 0.22);
@@ -88,10 +89,15 @@ a:hover {
   color: var(--acc);
 }
 .hdr {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   border-bottom: 1px solid var(--line);
-  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  background: color-mix(in srgb, var(--bg) 68%, transparent);
   backdrop-filter: blur(16px);
-  z-index: 10;
+  -webkit-backdrop-filter: blur(16px);
+  z-index: 1000;
 }
 .bar {
   display: flex;
@@ -1328,7 +1334,7 @@ body {
 
 @media (max-width: 767.98px) {
   .frame {
-    margin: 0;
+    margin: 76px 0 0;
     border-width: 0;
   }
 
