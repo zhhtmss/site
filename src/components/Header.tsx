@@ -1,13 +1,24 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Sun, Moon, Github } from "lucide-react";
 import { useApp } from "../ctx";
 import { GH } from "../data/i18n";
 import Logo from "./Logo";
+
 export default function Header() {
   const { t, lang, setLang, theme, toggleTheme } = useApp();
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const { pathname, hash } = useLocation();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   const links: [string, string][] = [
     ["features", "/#features"],
     ["download", "/download"],
@@ -17,7 +28,7 @@ export default function Header() {
     return pathname === p && (h ? hash === "#" + h : !hash);
   };
   return (
-    <header className="hdr">
+    <header className={`hdr ${scrolled ? "scrolled" : ""}`}>
       <div className="container">
         <nav className="navbar navbar-expand-lg px-0">
           <Link

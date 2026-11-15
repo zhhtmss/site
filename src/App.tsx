@@ -22,6 +22,7 @@ export default function App() {
   }, [pathname, hash]);
   return (
     <div className="frame app-shell">
+      <div className="ambient" aria-hidden="true" />
       <Header />
       <main className="page-main">
         <Routes>
